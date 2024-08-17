@@ -1,0 +1,78 @@
+.banner{
+    height: 280px;
+    width: 100%;
+}
+.gameTabs{
+    background: linear-gradient(180deg, rgba(102,0,153,1.00) 0%,rgba(204,51,153,1.00) 100%);
+    overflow-x: scroll;
+}
+.gameTabs::-webkit-scrollbar{
+    display: none;
+}
+.gameTabActive{
+    animation: icon-menu-anime-texas-data-v-29f846d2 1.5s ease-in-out infinite;
+
+}
+.gameTabImg{
+    width: 80px;
+    height: 80px;
+    transition: all 0.2s ease-in-out;
+ }
+ .activeBg{
+    background-color: initial;
+    background-image: url('../images/activeBg.png');
+    background-size: 100% 100%;
+ }
+ .tableContainer{
+    overflow-x: scroll;
+  }
+  thead tr th{
+    color: white;
+    box-shadow: 0px 2px 9px 2px rgba(255, 188, 0, 0.50);
+   background: linear-gradient(180deg, #FEEB84 19.06%, #DEAC2F 78.96%);
+  }
+  
+ 
+@media screen and (max-width:780px){
+    .banner{
+        height: 230px;
+     }
+}
+@media screen and (max-width:500px) {
+    .gameTabImg{
+        width: 60px;
+        height: 60px;
+     }
+     .filterTime{
+        font-size: 14px;
+        text-wrap: nowrap;
+      }
+}
+@media screen and (max-width:480px){
+    .banner{
+        height: 200px;
+     }
+     .gameTitle{
+        font-size: 14px;
+     }
+}
+@media screen and (max-width:400px) {
+    th,td,.tabText{
+      font-size: 14px;
+      text-wrap: nowrap;
+    }
+  }
+@media screen and (max-width:380px){
+    .banner{
+        height: 180px;
+     }
+     .gameTitle{
+        font-size: 13px;
+     }
+}
+@media screen and (max-width:350px) {
+    .gameTabImg{
+        width: 50px;
+        height: 50px;
+     }
+}

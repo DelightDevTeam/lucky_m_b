@@ -1,0 +1,25 @@
+.footer{
+    border-top: 2px solid white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: radial-gradient(ellipse farthest-side at 50% 50%, rgba(102,0,153,1.00) 0%,rgba(204,51,153,0.50) 88%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.82);
+}
+.footer img{
+    width: 40px;
+    height: 40px;
+    margin: auto;
+}
+.footerText{
+    color: white;
+ }
+ @media screen and (max-width:380px) {
+    .footerText{
+        font-size: 13px;
+    }
+ }

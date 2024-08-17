@@ -1,0 +1,50 @@
+.loginBg{
+    background-image: url('../images/loginBg.png');
+    background-position: 50% !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    height: 100vh !important;
+}
+.loginContainer{
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    border-radius: 20px;
+    width: 35%;
+    margin: auto;
+}
+.loginLogo{
+    width: 150px;
+    height: 150px;
+}
+.loginBtn{
+    color: black;
+     box-shadow: 0px 2px 9px 2px rgba(255, 188, 0, 0.50);
+    background: linear-gradient(180deg, #FEEB84 19.06%, #DEAC2F 78.96%);
+}
+.registerBtn{
+    color: white;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.72);
+    background: linear-gradient(180deg, #4B0710 0%, #FF0328 53.65%, #460410 91.67%);
+}
+
+@media screen  and (max-width:700px){
+    .loginContainer{
+        width: 80%;
+    }   
+}
+@media screen  and (max-width:400px){
+    .loginContainer{
+        width: 98%;
+    }   
+}
+.password{
+    position: relative;
+}
+.eye{
+    position: absolute;
+    right: 20px;
+    top: 35px;
+    color: rgb(65, 65, 65);
+    cursor: pointer;
+}

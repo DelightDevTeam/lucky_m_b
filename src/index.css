@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+  font-family: "Prompt", sans-serif;
+  padding: 0;
+  margin: 0;
+  background-image: url('../src/assets/images/bg.png');
+  
+}
+.w-full{
+  width: '100%';
+}
+.customInput{
+  border: none;
+   border-bottom: 1px solid #DFA041 ;
+   outline: none;
+   background: none;
+}
+.customFormContainer{
+  background: linear-gradient(180deg, rgba(102,0,153,0.80) 0%,rgba(204,51,153,1.00) 97%);
+}
+.customFormContainer input{
+  color: #F1D2A2 !important;
+
+}
+.w-max{
+  width: max-content;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+button{
+  border: none;
+}
+.footer{
+  width: 850px;
+  margin: auto;
+}
+.container{
+  width: 850px;
+  margin: auto;
+  min-height: 100vh;
+  background: #700599;
+  padding: 0;
+ }
+ .underline{
+  text-decoration: underline;
+ }
+.h-max{
+  height: max-content;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.gameTabActive{
+  background: radial-gradient(ellipse farthest-side at 50% 0%, rgba(102,0,153,1.00) 0%,rgba(204,51,153,1.00) 97%) !important;
+}
+
+.gameTab:hover{
+  background: #000 ;
+}
+.hoverGroup{
+  transition: all 0.2s ease-in-out;
+}
+.hoverGroup:hover{
+  scale: 1.4;
+}
+p{
+  margin: 0;
+  padding: 0;
+}
+.title-text{
+  background: linear-gradient(180deg, rgba(255,226,155,1.00) 20%,rgba(232,218,155,0.50) 50%,rgba(179,140,44,1.00) 80%);
+  -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.messageBox{
+  border: 1px solid rgb(255, 247, 0);
+    box-shadow: 0 0 10px rgb(255, 247, 0);
+    background: rgba(102,0,153,1.00);
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: rgb(134, 134, 134) !important;
+}
+@keyframes icon-menu-anime-texas-data-v-29f846d2{
+  0% {
+    transform: translateY(0) rotate(0);
+}
+ 50% {
+    transform: translateY(-5px) rotate(-1deg);
+}
+ 100% {
+    transform: translateY(0) rotate(0);
+}
+}
+@media screen and (max-width:850px) {
+    .container,.footer{
+      width: 100%;
+    }
+}

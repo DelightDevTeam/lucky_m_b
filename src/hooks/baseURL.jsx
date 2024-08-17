@@ -1,3 +1,3 @@
-const BASE_URL = "https://club388slot.online/api";
+const BASE_URL = 'https://www.luckym.online/api';
 
 export default BASE_URL;

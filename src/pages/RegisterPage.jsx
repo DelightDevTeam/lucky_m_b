@@ -82,8 +82,8 @@ const RegisterPage = () => {
 
   return (
     <div style={{height:'100vh'}} className='loginBg p-2 d-flex align-items-center justify-content-center' >
-      <div className="loginContainer px-3 pb-5">
-        <img src={logo} className='loginLogo' />
+      <div className="loginContainer px-3 py-5">
+        {/* <img src={logo} className='loginLogo' /> */}
         <h5 style={{marginTop:'-10px'}}>Register</h5>
         {errMsg && (
           <small className='alert alert-danger w-100 d-block text-start' role='alert' closeBtn>

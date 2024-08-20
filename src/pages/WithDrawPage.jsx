@@ -120,7 +120,7 @@ const WithDrawPage = () => {
                 <img
                   className="rounded-3 shadow"
                   src={bank?.image_url}
-                  width={90}
+                  width={100}
                   alt=""
                 />
               </div>

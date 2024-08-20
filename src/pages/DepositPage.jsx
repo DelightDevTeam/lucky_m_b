@@ -116,7 +116,7 @@ const DepositPage = () => {
                 <img
                   className="rounded-3 shadow"
                   src={bank.image_url}
-                  width={90}
+                  width={100}
                   alt=""
                 />
               </div>
@@ -127,7 +127,7 @@ const DepositPage = () => {
               </div>
             </div>
             <div>
-              <button className="btn btn-outline-light" onClick={handleCopyText}>
+              <button className="btn btn-outline-warning" onClick={handleCopyText}>
                 {/* <FaRegCopy size={25} /> */}
                 Copy
               </button>

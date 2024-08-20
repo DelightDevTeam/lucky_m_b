@@ -14,6 +14,7 @@ const DepositPage = () => {
   const { data: banks } = useFetch(BASE_URL + "/payment-type");
   const { lan } = useContext(AuthContext);
   
+  
   const bank = banks?.find((b) => String(b?.id) === String(agent?.payment_type_id));
   const [logs, setLogs] = useState(newLogs);
   const [amount, setAmount] = useState("");
@@ -108,25 +109,27 @@ const DepositPage = () => {
         </h4>
       </div>
       {bank && (
-        <div className="border border-light bg-transparent rounded-4 p-2 my-3 shadow-lg">
+        <div className="border border-light bg-transparent rounded-4 p-2 px-3 my-3 shadow-lg">
           <div className="d-flex justify-content-between align-items-center">
             <div className="d-flex">
               <div>
                 <img
                   className="rounded-3 shadow"
                   src={bank.image_url}
-                  width={50}
+                  width={90}
                   alt=""
                 />
               </div>
               <div className="ms-2">
+                <h6 className="fw-bold text-white">{bank.name}</h6>
                 <h6 className="fw-bold text-white">{agent?.account_name}</h6>
                 <h6 className="fw-bold text-white">{agent?.account_number}</h6>
               </div>
             </div>
             <div>
-              <button className="btn text-white" onClick={handleCopyText}>
-                <FaRegCopy size={25} />
+              <button className="btn btn-outline-light" onClick={handleCopyText}>
+                {/* <FaRegCopy size={25} /> */}
+                Copy
               </button>
             </div>
           </div>

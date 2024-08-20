@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /
+
+# Redirect all requests to the dist/index.html file
+RewriteRule ^(.*)$ dist/index.html [L]

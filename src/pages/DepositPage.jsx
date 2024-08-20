@@ -127,8 +127,8 @@ const DepositPage = () => {
               </div>
             </div>
             <div>
-              <button className="btn btn-outline-warning" onClick={handleCopyText}>
-                {/* <FaRegCopy size={25} /> */}
+              <button className="btn btn-warning" onClick={handleCopyText}>
+                <FaRegCopy size={25} />
                 Copy
               </button>
             </div>

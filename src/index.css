@@ -4,7 +4,9 @@ body{
   font-family: "Prompt", sans-serif;
   padding: 0;
   margin: 0;
-  background-image: url('../src/assets/images/bg.png');
+  /* background-image: url('../src/assets/images/bg.png'); */
+  background: rgb(80,0,253);
+  background: linear-gradient(170deg, rgba(80,0,253,0.7343531162464986) 0%, rgba(149,0,178,1) 100%, rgba(112,254,226,1) 100%);
   
 }
 .w-full{

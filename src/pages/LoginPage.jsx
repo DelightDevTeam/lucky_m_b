@@ -10,7 +10,7 @@ import { AuthContext } from '../contexts/AuthContext';
 const LoginPage = () => {
   const [eye, setEye] = useState(false);
   const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
   const [error, setError] = useState('');
   const [errMsg, setErrMsg] = useState('');
   const [loading, setLoading] = useState(false);
@@ -31,7 +31,7 @@ const LoginPage = () => {
     e.preventDefault();
     setLoading(true);
     const loginData = {
-      "user_name": name,
+      "phone": phone,
       "password": password
     }
     fetch(BASE_URL + '/login', {
@@ -81,21 +81,21 @@ const LoginPage = () => {
 
   return (
     <div style={{height:'100vh'}} className='loginBg p-2 d-flex align-items-center justify-content-center' >
-      <div className="loginContainer px-3 pb-5">
-        <img src={logo} className='loginLogo' />
+      <div className="loginContainer px-3 pb-5 pt-5">
+        {/* <img src={logo} className='loginLogo' /> */}
         <h5 style={{marginTop:'-10px'}}>Login</h5>
         <form onSubmit={login}>
           <div className="mb-3">
-              <small className="text-start text-warning d-block fw-semibold mb-1">Username
+              <small className="text-start text-warning d-block fw-semibold mb-1">Phone
               </small>
               <input 
               type="text" 
               className="rounded-5 form-control" 
-              placeholder='Enter Username'
-              onChange={(e) => setName(e.target.value)}
-              value={name}
+              placeholder='Enter Phone'
+              onChange={(e) => setPhone(e.target.value)}
+              value={phone}
               />
-              {error.user_name && <small className="text-start text-danger d-block fw-semibold">{error.user_name}</small>}
+              {error.phone && <small className="text-start text-danger d-block fw-semibold">{error.phone}</small>}
           </div>
           <div className="mb-3 password">
               <small className="text-start text-warning d-block fw-semibold mb-1">Password

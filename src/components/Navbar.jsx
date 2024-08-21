@@ -82,7 +82,7 @@ const Navbar = () => {
         />
         <Link to={"/"}>
         {agent.agent_logo && <img src={agent.agent_logo} className="logo" />}
-        {!agent.agent_logo && <img src={siteLogo} className="logo" />}
+        {!agent.agent_logo && <img src={siteLogo} className="logo"  />}
         </Link>
       </div>
       <div>

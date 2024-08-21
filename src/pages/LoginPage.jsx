@@ -96,6 +96,7 @@ const LoginPage = () => {
               value={phone}
               />
               {error.phone && <small className="text-start text-danger d-block fw-semibold">{error.phone}</small>}
+              {errMsg && <small className="text-start text-danger d-block fw-semibold">{errMsg}</small>}
           </div>
           <div className="mb-3 password">
               <small className="text-start text-warning d-block fw-semibold mb-1">Password

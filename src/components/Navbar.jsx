@@ -72,7 +72,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="navbar">
+    <div className="navbar py-0">
       <div className="d-flex align-items-center gap-2">
         <RiMenu2Line
           onClick={() => setIsSideMenuOpen(true)}
@@ -81,8 +81,8 @@ const Navbar = () => {
           size={30}
         />
         <Link to={"/"}>
-        {agent.agent_logo && <img src={agent.agent_logo} className="logo" />}
-        {!agent.agent_logo && <img src={siteLogo} className="logo"  />}
+        {agent.agent_logo && <img src={agent.agent_logo} className="py-0 my-0" width={130} />}
+        {!agent.agent_logo && <img src={siteLogo} className="logo" width={50} />}
         </Link>
       </div>
       <div>
@@ -144,10 +144,10 @@ const Navbar = () => {
         show={isSideMenuOpen}
         onHide={() => setIsSideMenuOpen(false)}
       >
-        <Offcanvas.Header closeButton>
+        <Offcanvas.Header className="py-0 my-0" closeButton>
           <Offcanvas.Title>
-            {agent.agent_logo && <img src={agent.agent_logo} className="logo" />}
-            {!agent.agent_logo && <img src={siteLogo} className="logo" />}
+            {agent.agent_logo && <img src={agent.agent_logo} className="" width={150} />}
+            {!agent.agent_logo && <img src={siteLogo} className="" width={150} />}
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>

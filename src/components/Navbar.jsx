@@ -72,7 +72,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="navbar py-0">
+    <div className="navbar py-3">
       <div className="d-flex align-items-center gap-2">
         <RiMenu2Line
           onClick={() => setIsSideMenuOpen(true)}
@@ -81,13 +81,13 @@ const Navbar = () => {
           size={30}
         />
         <Link to={"/"}>
-        {agent.agent_logo && <img src={agent.agent_logo} className="py-0 my-0" width={130} />}
+        {agent.agent_logo && <img src={agent.agent_logo} className="py-0 my-0" width={100} />}
         {!agent.agent_logo && <img src={siteLogo} className="logo" width={50} />}
         </Link>
       </div>
       <div>
         <div className="d-flex align-items-center gap-2">
-          <div className="bg-white d-flex gap-2 align-items-center rounded-5 py-1 px-2 text-dark">
+          <div className="btn btn-sm btn-light rounded-5">
             <img src={money} className="flag" />
             <span className="fw-semibold">
               {Number(user?.balance).toLocaleString()}
@@ -117,7 +117,7 @@ const Navbar = () => {
         {/* profile */}
         <Dropdown className="mt-2">
           <Dropdown.Toggle
-            className="w-100 btn btn-outline-light rounded-5"
+            className="w-100 btn btn-sm btn-outline-light rounded-5"
             style={{ background: "none" }}
             id="dropdown-basic"
           >
@@ -146,8 +146,8 @@ const Navbar = () => {
       >
         <Offcanvas.Header className="py-0 my-0" closeButton>
           <Offcanvas.Title>
-            {agent.agent_logo && <img src={agent.agent_logo} className="" width={150} />}
-            {!agent.agent_logo && <img src={siteLogo} className="" width={150} />}
+            {agent.agent_logo && <img src={agent.agent_logo} className="" width={100} />}
+            {!agent.agent_logo && <img src={siteLogo} className="" width={100} />}
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>

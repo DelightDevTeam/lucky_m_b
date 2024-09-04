@@ -38,49 +38,40 @@ const DepositPage = () => {
   const deposit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    if (amount < 1000) {
-      setLoading(false);
-      toast.error("အနည်းဆုံး ၁၀၀၀ကျပ်မှ စဖြည့်ပေးပါရန်။", {
-        position: "top-right",
-        autoClose: 1000,
-        theme: "dark",
-        hideProgressBar: false,
-        closeOnClick: true,
-      });
-      return;
-    }
-
+  
     const inputData = {
       agent_payment_type_id: String(agent?.payment_type_id),
       amount,
     };
-
+  
     try {
-      const response = await fetch(BASE_URL + "/transaction/deposit", {
+      const response = await fetch(`${BASE_URL}/transaction/deposit`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
           "Content-Type": "application/json",
+          "Accept": "application/json",
         },
         body: JSON.stringify(inputData),
       });
-
+  
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
-        if (response.status === 422) {
-          setErrMsg("");
-          setError(errorData.errors || "Unknown error");
-        } else if (response.status === 401) {
-          setError("");
-          setErrMsg(errorData.message || "Unauthorized");
-        } else {
-          throw new Error("Deposit Failed");
+  
+        switch (response.status) {
+          case 422:
+            setError(errorData.errors || "Validation error");
+            break;
+          case 401:
+            setErrMsg(errorData.message || "Unauthorized access");
+            break;
+          default:
+            setError("An unexpected error occurred. Please try again.");
         }
-        throw new Error("Deposit Failed");
+        throw new Error("Deposit failed");
       }
-
+  
       const data = await response.json();
-      setLoading(false);
       setAmount("");
       toast.success("ငွေသွင်းလွှာ ပို့ပြီးပါပြီ။", {
         position: "top-right",
@@ -89,12 +80,16 @@ const DepositPage = () => {
         hideProgressBar: false,
         closeOnClick: true,
       });
+  
     } catch (error) {
-      console.error("Error during fetch:", error);
+      console.error("Error during deposit:", error);
+      // Optionally set a general error state here
+      // setError("Deposit failed. Please try again later.");
+    } finally {
       setLoading(false);
     }
   };
-
+  
   useEffect(() => {
     setLogs(newLogs);
   }, [newLogs]);
@@ -149,7 +144,7 @@ const DepositPage = () => {
                 onChange={(e) => setAmount(e.target.value)}
                 value={amount}
               />
-              {error.amount && <small>{error.amount}</small>}
+              {error.amount && <small className="text-danger">{error.amount}</small>}
             </div>
           </div>
         </div>

@@ -24,17 +24,17 @@ const WithDrawPage = () => {
     const withdraw = async (e) => {
         e.preventDefault();
         setLoading(true);
-        if (amount < 1000) {
-            setLoading(false);
-            toast.error("အနည်းဆုံး ၁၀၀၀ကျပ်မှ စဖြည့်ပေးပါရန်။", {
-              position: "top-right",
-              autoClose: 1000,
-              theme: "dark",
-              hideProgressBar: false,
-              closeOnClick: true,
-            });
-            return;
-        }
+        // if (amount < 1000) {
+        //     setLoading(false);
+        //     toast.error("အနည်းဆုံး ၁၀၀၀ကျပ်မှ စဖြည့်ပေးပါရန်။", {
+        //       position: "top-right",
+        //       autoClose: 1000,
+        //       theme: "dark",
+        //       hideProgressBar: false,
+        //       closeOnClick: true,
+        //     });
+        //     return;
+        // }
         if(amount > balance){
             setLoading(false)
             toast.error("ငွေထုတ်ယူမည့် ပမာဏမှာ လက်ကျန်ငွေ ထပ် ကျော်လွန်နေပါသည်။", {

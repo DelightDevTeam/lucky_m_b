@@ -35,7 +35,7 @@ const WithDrawPage = () => {
         //     });
         //     return;
         // }
-        if(amount > balance){
+        if(Number(amount) > balance){
             setLoading(false)
             toast.error("ငွေထုတ်ယူမည့် ပမာဏမှာ လက်ကျန်ငွေ ထပ် ကျော်လွန်နေပါသည်။", {
               position: "top-right",

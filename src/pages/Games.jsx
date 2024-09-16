@@ -38,7 +38,8 @@ export default function Games() {
             return response.json();
           })
           .then((data) => {
-            window.open(data.Url, "_blank");
+            window.open(data.Url);
+            // window.href = data.Url;
           })
           .catch((error) => {
             console.error("Launch Game error:", error);

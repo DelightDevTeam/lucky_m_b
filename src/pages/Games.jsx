@@ -38,7 +38,7 @@ export default function Games() {
             return response.json();
           })
           .then((data) => {
-            window.open(data.Url);
+            window.location.href = data.Url;
             // window.href = data.Url;
           })
           .catch((error) => {

@@ -68,7 +68,7 @@ const GameTabs = () => {
         return response.json();
       })
       .then((data) => {
-        window.open(data.Url);
+        window.location.href = data.Url;
       })
       .catch((error) => {
         console.error("Launch Game error:", error);
@@ -100,7 +100,7 @@ const GameTabs = () => {
           return response.json();
         })
         .then((data) => {
-          window.open(data.Url);
+          window.location.href = data.Url;
         })
         .catch((error) => {
           console.error("Launch Game error:", error);

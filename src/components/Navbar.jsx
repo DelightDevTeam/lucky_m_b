@@ -90,7 +90,8 @@ const Navbar = () => {
           <div className="btn btn-sm btn-light rounded-5">
             <img src={money} className="flag" />
             <span className="fw-semibold">
-              {Number(user?.balance).toLocaleString()}
+              {user?.balance}
+              {/* {Number(user?.balance).toLocaleString()} */}
             </span>
           </div>
 

@@ -28,7 +28,7 @@ const AuthContextProvider = ({ children }) => {
       setProfile(userData);
     }
   }, [userData]);
-
+  
   useEffect(() => {
     if (error) {
       console.error("Failed to fetch user data:", error);

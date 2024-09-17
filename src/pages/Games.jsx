@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import useFetch from '../hooks/useFetch';
 import BASE_URL from '../hooks/baseURL';
 import { Spinner } from 'react-bootstrap';
+import { toast, ToastContainer } from 'react-toastify';
 
 export default function Games() {
     const { provider, type } = useParams();
@@ -32,14 +33,33 @@ export default function Games() {
         })
           .then((response) => {
             if (!response.ok) {
+              toast.error("Launch Game failed");
               throw new Error("Launch Game failed");
             }
-            console.log("Launch Game success");
+            // console.log("Launch Game success");
             return response.json();
           })
           .then((data) => {
+            // console.log(data);
+            if(data.ErrorCode == 999){
+              toast.error(data.ErrorMessage, {
+                position: "top-right", 
+                autoClose: 5000,     
+                hideProgressBar: false, 
+                closeOnClick: true,   
+                pauseOnHover: true,   
+                draggable: true,    
+                progress: undefined,   
+                style: {   
+                  backgroundColor: '#FF6B6B', 
+                  color: '#fff', 
+                  fontWeight: 'bold',
+                },
+                icon: "❌",            
+              });
+              return;
+            }
             window.location.href = data.Url;
-            // window.href = data.Url;
           })
           .catch((error) => {
             console.error("Launch Game error:", error);
@@ -48,6 +68,7 @@ export default function Games() {
 
   return (
     <div className='text-white container'>
+      <ToastContainer />
         <h3 className="text-center my-4">
             {providerName}
         </h3>
@@ -58,12 +79,12 @@ export default function Games() {
                 </div>
             )}
             {games.length !== 0 ? games.map((game, index) => (
-                <Link onClick={launchGame(game.product_code, game.code)} className="col-md-2 col-4 mb-4 px-1" key={index}>
+                <div onClick={launchGame(game.product_code, game.code)} className="col-md-2 col-4 mb-4 px-1" key={index}>
                     <img src={game.image_url} className='img-fluid rounded-4 shadow' alt="" />
                     <div className='text-center'>
                       <small>{game.name}</small>
                     </div>
-                </Link>
+                </div>
             )): (
                 <div className='text-center'>
                     {!loading && <h5 className='mt-5'>Games not found</h5>}

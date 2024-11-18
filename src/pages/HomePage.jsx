@@ -5,6 +5,7 @@ import GameTabs from '../components/GameTabs'
 import { Modal } from 'react-bootstrap'
 import useFetch from '../hooks/useFetch'
 import BASE_URL from '../hooks/baseURL'
+import { IoCloseOutline } from 'react-icons/io5'
 
 const HomePage = () => {
   const [isAdsOpen,setIsAdsOpen]=useState(false);
@@ -13,10 +14,10 @@ const HomePage = () => {
   const adsOn = localStorage.getItem('ads');
 
   useEffect(() => {
-    if(adsOn === "on"){
+    // if(adsOn === "on"){
       setIsAdsOpen(true);
-    }
-  }, [adsOn])
+    // }
+  }, [])
 
   const adsClose = () => {
     setIsAdsOpen(false);
@@ -31,11 +32,15 @@ const HomePage = () => {
       <GameTabs/>
       <Modal show={isAdsOpen} onHide={()=>[setIsAdsOpen(false), adsClose]}>
         <Modal.Header className='d-flex justify-content-end'>
-          <i className="fas fa-xmark" onClick={adsClose}></i>
+          <IoCloseOutline onClick={adsClose}/>
+          {/* <i className="fas fa-xmark"></i> */}
         </Modal.Header>
         <Modal.Body>
           <img src={ads?.img_url} className='img-fluid rounded-3' />
-          <p className='my-2 fw-semibold text-center'>ငွေသွင်းငွေထုတ်အတွက် အကြောင်းကြားစာ ဆက်သွယ်နိုင်ပါတယ် အခုပဲ လိုင်းစိမ်းကို အပ်လိုက်ပါ Add Line</p>
+          <p className='my-2 fw-semibold text-center'>
+            ငွေသွင်းငွေထုတ်အတွက် အကြောင်းကြားစာ ဆက်သွယ်နိုင်ပါတယ် အခုပဲ လိုင်းစိမ်းကို အပ်လိုက်ပါ။
+
+          </p>
           <p className="text-center fw-semibold mb-2">
           {contact.name && (
             <small className='d-block'>

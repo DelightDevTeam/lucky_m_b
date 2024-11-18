@@ -22,6 +22,10 @@ const useFetch = (url) => {
             signal
         })
             .then(res => {
+                if(res.status === 401){
+                    localStorage.removeItem('token');
+                    navigate('/login');
+                }
                 if (!res.ok) {
                     throw Error("Something Went Wrong!");
                 }

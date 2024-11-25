@@ -12,6 +12,8 @@ const HomePage = () => {
   const {data: ads} = useFetch(BASE_URL + '/popup-ads-banner');
   const {data: contact} = useFetch(BASE_URL + '/contact');
   const adsOn = localStorage.getItem('ads');
+  console.log(ads);
+  
 
   useEffect(() => {
     // if(adsOn === "on"){

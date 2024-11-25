@@ -35,17 +35,17 @@ const WithDrawPage = () => {
         //     });
         //     return;
         // }
-        if(Number(amount) > balance){
-            setLoading(false)
-            toast.error("ငွေထုတ်ယူမည့် ပမာဏမှာ လက်ကျန်ငွေ ထပ် ကျော်လွန်နေပါသည်။", {
-              position: "top-right",
-              autoClose: 3000,
-              theme: 'dark',
-              hideProgressBar: false,
-              closeOnClick: true
-            })
-            return;
-        }
+        // if(Number(amount) > balance){
+        //     setLoading(false)
+        //     toast.error("ငွေထုတ်ယူမည့် ပမာဏမှာ လက်ကျန်ငွေ ထပ် ကျော်လွန်နေပါသည်။", {
+        //       position: "top-right",
+        //       autoClose: 3000,
+        //       theme: 'dark',
+        //       hideProgressBar: false,
+        //       closeOnClick: true
+        //     })
+        //     return;
+        // }
 
         const inputData = {
             "amount": amount,
@@ -152,6 +152,7 @@ const WithDrawPage = () => {
                                 value={amount}
                                 />
                                 {error.amount && <span className="text-danger">{error.amount}</span>}
+                                {errMsg && <span className="text-danger">{errMsg}</span>}
                             </div>
                         </div>
                 </div>
